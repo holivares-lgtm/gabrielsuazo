@@ -1,45 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gestión de Profesores</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Profesores</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
 </head>
 <body>
-
 <nav class="navbar">
-    <div class="logo">
-        <img src="assets/logo.jpeg" alt="Logo" height="50">
-        <span>Escuela de Fútbol Gabriel Suazo</span>
-    </div>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="profesores.html">Profesores</a></li>
-        <li><a href="alumnos.html">Alumnos</a></li>
-        <li><a href="pagos.html">Pagos</a></li>
-        <li><a href="asistencia.html">Asistencia</a></li>
-    </ul>
+  <div class="logo">
+    <img src="assets/logo.jpeg" alt="Logo" height="50">
+    <span>Escuela de Fútbol Gabriel Suazo</span>
+  </div>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="profesores.html">Profesores</a></li>
+    <li><a href="alumnos.html">Alumnos</a></li>
+    <li><a href="pagos.html">Pagos</a></li>
+    <li><a href="asistencia.html">Asistencia</a></li>
+    <li><a href="asistencia-qr.html">Asistencia QR</a></li>
+  </ul>
 </nav>
-
 <div class="container">
-<h1>Gestión de Profesores</h1>
-
-<table>
-<tr><th>Nombre</th><th>Categoría</th><th>Remuneración</th></tr>
-<tr><td>Juan Pérez</td><td>Sub 12</td><td>$400.000</td></tr>
-<tr><td>Marcos Díaz</td><td>Sub 15</td><td>$450.000</td></tr>
-<tr><td>Pedro González</td><td>Sub 18</td><td>$500.000</td></tr>
-</table>
-
+  <h1>Gestión de Profesores</h1>
+  
+<div class="two-col">
+  <div>
+    <h2 style="margin:0 0 8px;">Profesores</h2>
+    <table>
+      <thead>
+        <tr><th>Nombre</th><th>Categoría</th><th>Email</th><th>Remuneración</th><th>Ficha</th></tr>
+      </thead>
+      <tbody id="tablaProfesores"></tbody>
+    </table>
+    <p class="hint">* Demo: edita remuneración desde la ficha (se guarda en tu navegador).</p>
+  </div>
+  <div>
+    <div class="card" style="text-align:left;">
+      <h2 style="margin-top:0;">Ficha del profesor</h2>
+      <p class="hint">Selecciona un profesor en la tabla para ver/editar su ficha.</p>
+      <div id="profFichaEmpty" class="hint">No hay profesor seleccionado.</div>
+      <div id="profFicha" style="display:none;">
+        <div class="form-grid">
+          <div><label>Nombre</label><input id="profNombre" type="text" disabled></div>
+          <div><label>Categoría</label><input id="profCategoria" type="text" disabled></div>
+          <div><label>Email</label><input id="profEmail" type="email" disabled></div>
+          <div><label>Remuneración mensual (CLP)</label><input id="profRemu" type="number" min="0" step="1000"></div>
+        </div>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn" id="btnGuardarProf">Guardar cambios</button>
+          <button class="btn secondary" id="btnResetProf">Restaurar demo</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+</div>
 <footer>
-    <p>© 2026 Escuela de Fútbol Gabriel Suazo - MVP Demo</p>
+  <p>© 2026 Escuela de Fútbol Gabriel Suazo - MVP Demo</p>
 </footer>
-
 <script src="js/app.js"></script>
 </body>
 </html>

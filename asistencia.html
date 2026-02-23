@@ -1,45 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Control de Asistencia</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Asistencia</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
 </head>
 <body>
-
 <nav class="navbar">
-    <div class="logo">
-        <img src="assets/logo.jpeg" alt="Logo" height="50">
-        <span>Escuela de Fútbol Gabriel Suazo</span>
-    </div>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="profesores.html">Profesores</a></li>
-        <li><a href="alumnos.html">Alumnos</a></li>
-        <li><a href="pagos.html">Pagos</a></li>
-        <li><a href="asistencia.html">Asistencia</a></li>
-    </ul>
+  <div class="logo">
+    <img src="assets/logo.jpeg" alt="Logo" height="50">
+    <span>Escuela de Fútbol Gabriel Suazo</span>
+  </div>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="profesores.html">Profesores</a></li>
+    <li><a href="alumnos.html">Alumnos</a></li>
+    <li><a href="pagos.html">Pagos</a></li>
+    <li><a href="asistencia.html">Asistencia</a></li>
+    <li><a href="asistencia-qr.html">Asistencia QR</a></li>
+  </ul>
 </nav>
-
 <div class="container">
-<h1>Control de Asistencia</h1>
+  <h1>Control de Asistencia</h1>
+  
+<div class="two-col">
+  <div>
+    <h2 style="margin:0 0 8px;">Registrar asistencia (manual)</h2>
+    <div class="card" style="text-align:left;">
+      <div class="form-grid">
+        <div><label>Alumno</label><select id="asistAlumno"></select></div>
+        <div><label>Fecha</label><input id="asistFecha" type="date"></div>
+        <div><label>Estado</label>
+          <select id="asistEstado">
+            <option value="Presente">Presente</option>
+            <option value="Ausente">Ausente</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:12px;"><button class="btn" id="btnRegistrarAsist">Registrar</button></div>
+      <p class="hint">Para registrar por QR, usa la sección “Asistencia QR”.</p>
+    </div>
+  </div>
 
-<table>
-<tr><th>Alumno</th><th>Fecha</th><th>Estado</th></tr>
-<tr><td>Diego Soto</td><td>10-02-2026</td><td>Presente</td></tr>
-<tr><td>Lucas Rojas</td><td>10-02-2026</td><td>Ausente</td></tr>
-<tr><td>Matías Herrera</td><td>10-02-2026</td><td>Presente</td></tr>
-</table>
-
+  <div>
+    <h2 style="margin:0 0 8px;">Historial (local)</h2>
+    <table>
+      <thead><tr><th>Alumno</th><th>Fecha</th><th>Estado</th><th>Fuente</th></tr></thead>
+      <tbody id="tablaAsistencia"></tbody>
+    </table>
+  </div>
 </div>
 
+</div>
 <footer>
-    <p>© 2026 Escuela de Fútbol Gabriel Suazo - MVP Demo</p>
+  <p>© 2026 Escuela de Fútbol Gabriel Suazo - MVP Demo</p>
 </footer>
-
 <script src="js/app.js"></script>
 </body>
 </html>
